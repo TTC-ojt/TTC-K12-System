@@ -14,7 +14,6 @@ namespace TTC_K12System.Forms
 
         private Classes.Student student = new Classes.Student();
         private Classes.Batch batch = new Classes.Batch();
-        private Classes.Program program = new Classes.Program();
         private List<Classes.Student> students = new List<Classes.Student>();
         private List<Classes.Transaction> transactions = new List<Classes.Transaction>();
 
@@ -35,8 +34,6 @@ namespace TTC_K12System.Forms
             string studentname = student.LastName + ", " + student.FirstName + " " + student.MiddleName;
             lblStudentName.Text = studentname;
             batch = Classes.Batch.GetByID(student.BatchID);
-            program = Classes.Program.getByID(batch.ProgramID);
-            lblProgramTitle.Text = program.Title;
             lblBatch.Text = batch.Number.ToString();
             LoadTransactions();
         }
@@ -67,7 +64,7 @@ namespace TTC_K12System.Forms
         {
             if (txtSearch.TextLength > 2)
             {
-                students = Classes.Student.Find(txtSearch.Text, 0, 0);
+                students = Classes.Student.Find(txtSearch.Text, 0);
                 lbxStudents.Items.Clear();
                 foreach (Classes.Student student in students)
                 {

@@ -44,24 +44,10 @@ namespace TTC_K12System
             this.Hide();
         }
 
-        private void btnProgramProfile_Click(object sender, EventArgs e)
-        {
-            Forms.ProgramProfile program = new Forms.ProgramProfile();
-            program.Show();
-            this.Hide();
-        }
-
         private void btnSubjects_Click(object sender, EventArgs e)
         {
             Forms.SubjectMaintenance subject = new Forms.SubjectMaintenance();
             subject.Show();
-            this.Hide();
-        }
-
-        private void btnTeachers_Click(object sender, EventArgs e)
-        {
-            Forms.Teachers teachers = new Forms.Teachers();
-            teachers.Show();
             this.Hide();
         }
 
@@ -74,11 +60,42 @@ namespace TTC_K12System
 
         private void Main_Load(object sender, EventArgs e)
         {
+            connect();
+        }
+
+        void connect()
+        {
             Builder.UserID = Properties.Settings.Default.UserID;
             Builder.Password = Properties.Settings.Default.Password;
             Builder.Database = Properties.Settings.Default.Database;
             Builder.Server = Properties.Settings.Default.Server;
             Builder.Port = Properties.Settings.Default.Port;
+        }
+
+        private void btnConnectionSettings_Click(object sender, EventArgs e)
+        {
+            Forms.ConnectionSettings cs = new Forms.ConnectionSettings();
+            cs.ShowDialog();
+            connect();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnInsurance_Click(object sender, EventArgs e)
+        {
+            Forms.Insurances ins = new Forms.Insurances();
+            ins.Show();
+            Hide();
+        }
+
+        private void btnChecklist_Click(object sender, EventArgs e)
+        {
+            Forms.Documents docs = new Forms.Documents();
+            docs.Show();
+            Hide();
         }
     }
 }

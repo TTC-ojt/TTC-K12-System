@@ -10,19 +10,16 @@ namespace TTC_K12System.Forms
         {
             InitializeComponent();
         }
-
-        private Classes.Program program;
+        
         List<Classes.Subject> subjects = new List<Classes.Subject>();
         Classes.Subject subject = new Classes.Subject();
         
         private void loadSubjects()
         {
-            subjects = Classes.Subject.getAllByProgram(program.ID);
+            subjects = Classes.Subject.getAll();
             dgvSubjects.Rows.Clear();
             foreach(Classes.Subject subject in subjects)
             {
-                Classes.Program program = Classes.Program.getByID(subject.ProgramID);
-                subject.ProgramID = program.ID;
                 dgvSubjects.Rows.Add(subject.ID, subject.Type, subject.Code, subject.Title, subject.Hours);
             }
             dgvSubjects.ClearSelection();
@@ -30,26 +27,10 @@ namespace TTC_K12System.Forms
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            subject.ProgramID = program.ID;
             subject.Code = txtSubjectCode.Text;
-            subject.Title = txtProgramTitle.Text;
             subject.Description = txtDescription.Text;
             subject.Save();
             loadSubjects();
-        }
-
-        private void btnChangeCourse_Click(object sender, EventArgs e)
-        {
-            ChooseProgram cp = new ChooseProgram();
-            cp.ShowDialog();
-            ChangeProgram(cp.program);
-            loadSubjects();
-        }
-
-        private void ChangeProgram(Classes.Program program)
-        {
-            this.program = program;
-            txtProgramTitle.Text = program.Title;
         }
 
         private void dgvSubjects_SelectionChanged(object sender, EventArgs e)
@@ -77,6 +58,11 @@ namespace TTC_K12System.Forms
         private void label3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void SubjectMaintenance_Load(object sender, EventArgs e)
+        {
+            loadSubjects();
         }
     }
 }

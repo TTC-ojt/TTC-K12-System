@@ -9,7 +9,6 @@ namespace TTC_K12System.Classes
     {
         //PROPERTIES
         internal int ID { get; set; }
-        internal int ProgramID { get; set; }
         internal string Type { get; set; }
         internal string Code { get; set; }
         internal string Title { get; set; }
@@ -21,7 +20,7 @@ namespace TTC_K12System.Classes
         /// </summary>
         /// <param name="ProgramID">Program ID</param>
         /// <returns>Subjects List</returns>
-        internal static List<Subject> getAllByProgram(int ProgramID)
+        internal static List<Subject> getAll()
         {
             List<Subject> subjects = new List<Subject>();
             try
@@ -30,8 +29,7 @@ namespace TTC_K12System.Classes
                 {
                     MySqlCommand cmd = new MySqlCommand();
                     cmd.Connection = con;
-                    cmd.CommandText = "SELECT * FROM subjects WHERE program_id = @program_id";
-                    cmd.Parameters.AddWithValue("program_id", ProgramID);
+                    cmd.CommandText = "SELECT * FROM subjects";
                     con.Open();
                     using (MySqlDataReader rdr = cmd.ExecuteReader())
                     {
@@ -39,12 +37,11 @@ namespace TTC_K12System.Classes
                         {
                             Subject subject = new Subject();
                             subject.ID = rdr.GetInt32(0);
-                            subject.ProgramID = rdr.GetInt32(1);
-                            subject.Type = rdr.GetString(2);
-                            subject.Code = rdr.GetString(3);
-                            subject.Title = rdr.GetString(4);
-                            subject.Description = rdr.GetString(5);
-                            subject.Hours = rdr.GetInt16(6);
+                            subject.Type = rdr.GetString(1);
+                            subject.Code = rdr.GetString(2);
+                            subject.Title = rdr.GetString(3);
+                            subject.Description = rdr.GetString(4);
+                            subject.Hours = rdr.GetInt16(5);
                             subjects.Add(subject);
                         }
                     }
@@ -70,14 +67,13 @@ namespace TTC_K12System.Classes
                     cmd.Connection = con;
                     if (ID > 0)
                     {
-                        cmd.CommandText = "UPDATE subjects SET program_id = @program_id, type = @type, code = @code,title = @title, description = @description, hours = @hoursWHERE id = @id";
+                        cmd.CommandText = "UPDATE subjects SET type = @type, code = @code,title = @title, description = @description, hours = @hoursWHERE id = @id";
                         cmd.Parameters.AddWithValue("id", ID);
                     }
                     else
                     {
-                        cmd.CommandText = "INSERT INTO subjects (program_id, type, code, title, description, hours ) VALUES (@program_id, @type, @code, @title, @description ,@hours)";
+                        cmd.CommandText = "INSERT INTO subjects (type, code, title, description, hours ) VALUES (@type, @code, @title, @description ,@hours)";
                     }
-                    cmd.Parameters.AddWithValue("program_id", ProgramID);
                     cmd.Parameters.AddWithValue("type", Type);
                     cmd.Parameters.AddWithValue("code", Code);
                     cmd.Parameters.AddWithValue("title", Title);

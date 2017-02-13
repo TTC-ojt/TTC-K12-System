@@ -19,27 +19,12 @@ namespace TTC_K12System.Forms
 
         private Classes.Student student = new Classes.Student();
         private Classes.Batch batch = new Classes.Batch();
-        private Classes.Program program = new Classes.Program();
         private Classes.Contact contact = new Classes.Contact();
         private Classes.Profile profile = new Classes.Profile();
 
-        private void btnChangeCourse_Click(object sender, EventArgs e)
-        {
-            ChooseProgram cp = new ChooseProgram();
-            cp.ShowDialog();
-            program = cp.program;
-            LoadProgram();
-        }
-
-        private void LoadProgram()
-        {
-            student.Tuition = program.Tuition;
-            txtProgramTitle.Text = program.Title;
-            LoadBatches();
-        }
         private void LoadBatches()
         {
-            List<Classes.Batch> batches = Classes.Batch.GetAllByProgram(program.ID);
+            List<Classes.Batch> batches = Classes.Batch.GetAll();
             cbxBatch.Items.Clear();
             foreach (Classes.Batch batch in batches)
             {
@@ -50,7 +35,10 @@ namespace TTC_K12System.Forms
 
         private void btnNewBatch_Click(object sender, EventArgs e)
         {
-            batch = Classes.Batch.New(program.ID);
+            batch = new Classes.Batch();
+            batch.Number = Convert.ToInt16(cbxBatch.Text);
+            batch.Year = DateTime.Today.Year.ToString();
+            batch.Save();
             cbxBatch.Items.Add(batch.Number);
             cbxBatch.SelectedIndex = cbxBatch.Items.Count - 1;
         }
@@ -58,7 +46,7 @@ namespace TTC_K12System.Forms
         private void cbxBatch_SelectedIndexChanged(object sender, EventArgs e)
         {
             short Number = Convert.ToInt16(cbxBatch.SelectedItem);
-            batch = Classes.Batch.GetByProgramAndNumber(program.ID, Number);
+            batch = Classes.Batch.GetByNumber(Number);
             txtStudentNumber.Text = DateTime.Today.ToString("yy") + "-" + Number.ToString("D2") + "-" + Classes.Student.GetNextNumber();
         }
 
@@ -83,7 +71,7 @@ namespace TTC_K12System.Forms
             student.FirstName = txtStudentFirstName.Text;
             student.MiddleName = txtStudentMiddleName.Text;
             student.ExtName = txtStudentExtName.Text;
-            student.Tuition = program.Tuition;
+            student.Tuition = nudTuition.Value;
             student.Status = "1st Year";
             student.Save();
             profile = new Classes.Profile();
@@ -107,6 +95,11 @@ namespace TTC_K12System.Forms
         {
             this.Close();
             Program.main.Show();
+        }
+
+        private void Registration_Load(object sender, EventArgs e)
+        {
+            LoadBatches();
         }
     }
 }

@@ -28,12 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SubjectMaintenance));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SubjectMaintenance));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label19 = new System.Windows.Forms.Label();
-            this.txtProgramTitle = new System.Windows.Forms.TextBox();
-            this.btnChangeCourse = new System.Windows.Forms.Button();
             this.dgvSubjects = new System.Windows.Forms.DataGridView();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.code = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,12 +39,12 @@
             this.btnClose = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
+            this.txtDescription = new System.Windows.Forms.TextBox();
             this.txtTitle = new System.Windows.Forms.TextBox();
             this.txtSubjectCode = new System.Windows.Forms.TextBox();
+            this.txtClassificationOfWorker = new System.Windows.Forms.Label();
             this.txtCompleteAddressOfEMployer = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtDescription = new System.Windows.Forms.TextBox();
-            this.txtClassificationOfWorker = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSubjects)).BeginInit();
             this.SuspendLayout();
@@ -55,9 +52,6 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel1.Controls.Add(this.label19);
-            this.panel1.Controls.Add(this.txtProgramTitle);
-            this.panel1.Controls.Add(this.btnChangeCourse);
             this.panel1.Controls.Add(this.dgvSubjects);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.btnClose);
@@ -74,50 +68,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(710, 590);
             this.panel1.TabIndex = 0;
-            // 
-            // label19
-            // 
-            this.label19.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(2, 54);
-            this.label19.Margin = new System.Windows.Forms.Padding(0);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(91, 16);
-            this.label19.TabIndex = 75;
-            this.label19.Text = "Program Title:";
-            this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // txtProgramTitle
-            // 
-            this.txtProgramTitle.BackColor = System.Drawing.Color.White;
-            this.txtProgramTitle.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtProgramTitle.Location = new System.Drawing.Point(5, 70);
-            this.txtProgramTitle.Margin = new System.Windows.Forms.Padding(0, 6, 0, 5);
-            this.txtProgramTitle.Name = "txtProgramTitle";
-            this.txtProgramTitle.ReadOnly = true;
-            this.txtProgramTitle.Size = new System.Drawing.Size(391, 25);
-            this.txtProgramTitle.TabIndex = 76;
-            // 
-            // btnChangeCourse
-            // 
-            this.btnChangeCourse.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btnChangeCourse.AutoSize = true;
-            this.btnChangeCourse.BackColor = System.Drawing.Color.Silver;
-            this.btnChangeCourse.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnChangeCourse.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen;
-            this.btnChangeCourse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnChangeCourse.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChangeCourse.Image = ((System.Drawing.Image)(resources.GetObject("btnChangeCourse.Image")));
-            this.btnChangeCourse.Location = new System.Drawing.Point(396, 70);
-            this.btnChangeCourse.Margin = new System.Windows.Forms.Padding(0, 5, 3, 3);
-            this.btnChangeCourse.Name = "btnChangeCourse";
-            this.btnChangeCourse.Size = new System.Drawing.Size(80, 25);
-            this.btnChangeCourse.TabIndex = 77;
-            this.btnChangeCourse.Text = "SELECT";
-            this.btnChangeCourse.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnChangeCourse.UseVisualStyleBackColor = false;
-            this.btnChangeCourse.Click += new System.EventHandler(this.btnChangeCourse_Click);
             // 
             // dgvSubjects
             // 
@@ -136,14 +86,14 @@
             this.id,
             this.code,
             this.title});
-            this.dgvSubjects.Location = new System.Drawing.Point(5, 101);
+            this.dgvSubjects.Location = new System.Drawing.Point(5, 37);
             this.dgvSubjects.Margin = new System.Windows.Forms.Padding(5, 0, 5, 5);
             this.dgvSubjects.MultiSelect = false;
             this.dgvSubjects.Name = "dgvSubjects";
             this.dgvSubjects.ReadOnly = true;
             this.dgvSubjects.RowHeadersVisible = false;
             this.dgvSubjects.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSubjects.Size = new System.Drawing.Size(700, 254);
+            this.dgvSubjects.Size = new System.Drawing.Size(700, 318);
             this.dgvSubjects.TabIndex = 52;
             this.dgvSubjects.SelectionChanged += new System.EventHandler(this.dgvSubjects_SelectionChanged);
             // 
@@ -185,7 +135,7 @@
             // btnClose
             // 
             this.btnClose.BackColor = System.Drawing.Color.Silver;
-            this.btnClose.FlatAppearance.BorderColor = System.Drawing.Color.DarkGreen;
+            this.btnClose.FlatAppearance.BorderColor = System.Drawing.Color.Indigo;
             this.btnClose.FlatAppearance.BorderSize = 2;
             this.btnClose.Font = new System.Drawing.Font("Candara", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
@@ -201,7 +151,7 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Silver;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.DarkGreen;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Indigo;
             this.button1.FlatAppearance.BorderSize = 2;
             this.button1.Font = new System.Drawing.Font("Candara", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
@@ -216,7 +166,7 @@
             // btnSave
             // 
             this.btnSave.BackColor = System.Drawing.Color.Silver;
-            this.btnSave.FlatAppearance.BorderColor = System.Drawing.Color.DarkGreen;
+            this.btnSave.FlatAppearance.BorderColor = System.Drawing.Color.Indigo;
             this.btnSave.FlatAppearance.BorderSize = 2;
             this.btnSave.Font = new System.Drawing.Font("Candara", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
@@ -228,6 +178,16 @@
             this.btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // txtDescription
+            // 
+            this.txtDescription.BackColor = System.Drawing.Color.White;
+            this.txtDescription.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDescription.Location = new System.Drawing.Point(7, 452);
+            this.txtDescription.Margin = new System.Windows.Forms.Padding(0, 2, 5, 5);
+            this.txtDescription.Name = "txtDescription";
+            this.txtDescription.Size = new System.Drawing.Size(698, 25);
+            this.txtDescription.TabIndex = 47;
             // 
             // txtTitle
             // 
@@ -248,6 +208,17 @@
             this.txtSubjectCode.Name = "txtSubjectCode";
             this.txtSubjectCode.Size = new System.Drawing.Size(152, 25);
             this.txtSubjectCode.TabIndex = 45;
+            // 
+            // txtClassificationOfWorker
+            // 
+            this.txtClassificationOfWorker.AutoSize = true;
+            this.txtClassificationOfWorker.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtClassificationOfWorker.Location = new System.Drawing.Point(4, 434);
+            this.txtClassificationOfWorker.Name = "txtClassificationOfWorker";
+            this.txtClassificationOfWorker.Size = new System.Drawing.Size(76, 16);
+            this.txtClassificationOfWorker.TabIndex = 43;
+            this.txtClassificationOfWorker.Text = "Description:";
+            this.txtClassificationOfWorker.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtCompleteAddressOfEMployer
             // 
@@ -273,27 +244,6 @@
             this.label5.Text = "SUBJECT MAINTENANCE";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // txtDescription
-            // 
-            this.txtDescription.BackColor = System.Drawing.Color.White;
-            this.txtDescription.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescription.Location = new System.Drawing.Point(7, 452);
-            this.txtDescription.Margin = new System.Windows.Forms.Padding(0, 2, 5, 5);
-            this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(698, 25);
-            this.txtDescription.TabIndex = 47;
-            // 
-            // txtClassificationOfWorker
-            // 
-            this.txtClassificationOfWorker.AutoSize = true;
-            this.txtClassificationOfWorker.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtClassificationOfWorker.Location = new System.Drawing.Point(4, 434);
-            this.txtClassificationOfWorker.Name = "txtClassificationOfWorker";
-            this.txtClassificationOfWorker.Size = new System.Drawing.Size(76, 16);
-            this.txtClassificationOfWorker.TabIndex = 43;
-            this.txtClassificationOfWorker.Text = "Description:";
-            this.txtClassificationOfWorker.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // SubjectMaintenance
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -306,6 +256,7 @@
             this.Padding = new System.Windows.Forms.Padding(5);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SubjectMaintenance";
+            this.Load += new System.EventHandler(this.SubjectMaintenance_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSubjects)).EndInit();
@@ -324,9 +275,6 @@
         private System.Windows.Forms.TextBox txtSubjectCode;
         private System.Windows.Forms.Label txtCompleteAddressOfEMployer;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.TextBox txtProgramTitle;
-        private System.Windows.Forms.Button btnChangeCourse;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn code;

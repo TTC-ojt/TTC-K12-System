@@ -159,7 +159,7 @@ namespace TTC_K12System.Classes
         /// </summary>
         /// <param name="query"></param>
         /// <returns></returns>
-        internal static List<Student> Find(string query, int ProgramID, int BatchID)
+        internal static List<Student> Find(string query, int BatchID)
         {
             List<Student> students = new List<Student>();
             try
@@ -168,10 +168,9 @@ namespace TTC_K12System.Classes
                 {
                     MySqlCommand cmd = new MySqlCommand();
                     cmd.Connection = con;
-                    if (ProgramID > 0 && BatchID > 0)
+                    if (BatchID > 0)
                     {
-                        cmd.CommandText = "SELECT students.id, students.batch_id, students.number, students.lrn_number, students.lastname, students.firstname, students.middlename, students.extname, students.tuition, students.status FROM students JOIN batches ON students.batch_id=batches.id JOIN programs ON batches.program_id=programs.id WHERE CONCAT_WS(' ', students.number, students.lrn_number, students.firstname, students.middlename, students.lastname) LIKE '%" + query + "%' AND programs.id=@program_id AND batches.id=@batch_id";
-                        cmd.Parameters.AddWithValue("program_id", ProgramID);
+                        cmd.CommandText = "SELECT students.id, students.batch_id, students.number, students.lrn_number, students.lastname, students.firstname, students.middlename, students.extname, students.tuition, students.status FROM students JOIN batches ON students.batch_id=batches.id WHERE CONCAT_WS(' ', students.number, students.lrn_number, students.firstname, students.middlename, students.lastname) LIKE '%" + query + "%' AND batches.id=@batch_id";
                         cmd.Parameters.AddWithValue("batch_id", BatchID);
                     }
                     else
@@ -226,7 +225,7 @@ namespace TTC_K12System.Classes
                         while (rdr.Read())
                         {
                             string last = rdr.GetString(0);
-                            number = Convert.ToInt32(last.Split('-').Last()) + 1;
+                            number = Convert.ToInt32(last.Split('K').Last()) + 1;
                             break;
                         }
                     }
@@ -236,22 +235,22 @@ namespace TTC_K12System.Classes
             {
                 ErrorTrapper.Log(ex, LogOptions.PromptTheUser);
             }
-            return number.ToString("D4");
+            return "K" + number.ToString("D4");
         }
 
         internal string GetFullName()
         {
-            string fullname = FirstName + " ";
+            string fullname = LastName;
+            if (!string.IsNullOrWhiteSpace(ExtName)) fullname += " " + ExtName;
+            fullname += ", " + FirstName + " ";
             if (!string.IsNullOrWhiteSpace(MiddleName))
             {
                 var mis = MiddleName.Split(' ');
                 foreach (var mi in mis)
                 {
-                    fullname += mi.Substring(0, 1) + ". ";
+                    if (mi.Length > 0) fullname += mi.Substring(0, 1) + ". ";
                 }
             }
-            fullname += LastName;
-            if (!string.IsNullOrWhiteSpace(ExtName)) fullname += " " + ExtName;
             return fullname;
         }
 
@@ -268,18 +267,19 @@ namespace TTC_K12System.Classes
                     cmd.Connection = con;
                     if (ID > 0)
                     {
-                        cmd.CommandText = "UPDATE students SET number = @number, lrn_number = @lrn_number, lastname = @lastname, firstname = @firstname, middlename = @middlename, tuition = @tuition, status = @status WHERE id = @id";
+                        cmd.CommandText = "UPDATE students SET number = @number, lrn_number = @lrn_number, lastname = @lastname, firstname = @firstname, middlename = @middlename, extname=@extname, tuition = @tuition, status = @status WHERE id = @id";
                         cmd.Parameters.AddWithValue("id", ID);
                     }
                     else
                     {
-                        cmd.CommandText = "INSERT INTO students (batch_id, number, lrn_number, lastname, firstname, middlename, tuition, status) VALUES (@batch_id, @number, @lrn_number, @lastname, @firstname, @middlename, @tuition, @status)";
+                        cmd.CommandText = "INSERT INTO students (batch_id, number, lrn_number, lastname, firstname, middlename, extname, tuition, status) VALUES (@batch_id, @number, @lrn_number, @lastname, @firstname, @middlename, @extname, @tuition, @status)";
                         cmd.Parameters.AddWithValue("batch_id", BatchID);
                     }
                     cmd.Parameters.AddWithValue("number", Number);
                     cmd.Parameters.AddWithValue("lrn_number", LRN);
                     cmd.Parameters.AddWithValue("lastname", LastName);
                     cmd.Parameters.AddWithValue("firstname", FirstName);
+                    cmd.Parameters.AddWithValue("extname", ExtName);
                     cmd.Parameters.AddWithValue("middlename", MiddleName);
                     cmd.Parameters.AddWithValue("tuition", Tuition);
                     cmd.Parameters.AddWithValue("status", Status);

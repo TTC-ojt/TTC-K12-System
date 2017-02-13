@@ -19,7 +19,6 @@ namespace TTC_K12System.Forms
 
         internal Classes.Student student = new Classes.Student();
         private Classes.Batch batch = new Classes.Batch();
-        private Classes.Program program = new Classes.Program();
         private Classes.Contact contact = new Classes.Contact();
         private Classes.Profile profile = new Classes.Profile();
 
@@ -36,14 +35,12 @@ namespace TTC_K12System.Forms
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            student.BatchID = batch.ID;
-            student.Number = txtStudentNumber.Text;
             student.LRN = txtStudentLRN.Text;
             student.LastName = txtStudentLastName.Text;
             student.FirstName = txtStudentFirstName.Text;
             student.MiddleName = txtStudentMiddleName.Text;
             student.ExtName = txtStudentExtName.Text;
-            student.Tuition = program.Tuition;
+            student.Tuition = nudTuition.Value;
             student.Status = "1st Year";
             student.Save();
             profile.StudentID = student.ID;
@@ -64,17 +61,13 @@ namespace TTC_K12System.Forms
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
-            Program.main.Show();
         }
 
         private void StudentInfo_Load(object sender, EventArgs e)
         {
             batch = Classes.Batch.GetByID(student.BatchID);
-            program = Classes.Program.getByID(batch.ProgramID);
             profile = Classes.Profile.getByStudent(student.ID);
             contact = Classes.Contact.getContactByStudent(student.ID);
-
-            txtProgramTitle.Text = program.Title;
 
             txtBatchNumber.Text = batch.Number.ToString("D2");
 
@@ -84,6 +77,7 @@ namespace TTC_K12System.Forms
             txtStudentFirstName.Text = student.FirstName;
             txtStudentMiddleName.Text = student.MiddleName;
             txtStudentExtName.Text = student.ExtName;
+            nudTuition.Value = student.Tuition;
 
             txtProfileBirthplace.Text = profile.Birthplace;
             nudBday.Value = profile.Birthdate.Day;

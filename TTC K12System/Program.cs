@@ -18,9 +18,8 @@ namespace TTC_K12System
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            main = new Main();
-            main.Show();
-            Application.Run();
+            main = new TTC_K12System.Main();
+            Application.Run(main);
         }
     }
 }

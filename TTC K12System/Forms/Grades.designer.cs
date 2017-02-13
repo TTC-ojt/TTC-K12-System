@@ -29,17 +29,12 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Grades));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnPrint = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
-            this.label19 = new System.Windows.Forms.Label();
-            this.txtCopr = new System.Windows.Forms.TextBox();
-            this.txtProgramTitle = new System.Windows.Forms.TextBox();
-            this.label18 = new System.Windows.Forms.Label();
             this.cbxBatch = new System.Windows.Forms.ComboBox();
-            this.btnChangeCourse = new System.Windows.Forms.Button();
             this.label20 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvGrades = new System.Windows.Forms.DataGridView();
@@ -55,12 +50,7 @@
             this.panel1.Controls.Add(this.btnClose);
             this.panel1.Controls.Add(this.btnPrint);
             this.panel1.Controls.Add(this.btnSave);
-            this.panel1.Controls.Add(this.label19);
-            this.panel1.Controls.Add(this.txtCopr);
-            this.panel1.Controls.Add(this.txtProgramTitle);
-            this.panel1.Controls.Add(this.label18);
             this.panel1.Controls.Add(this.cbxBatch);
-            this.panel1.Controls.Add(this.btnChangeCourse);
             this.panel1.Controls.Add(this.label20);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.dgvGrades);
@@ -73,7 +63,7 @@
             // btnClose
             // 
             this.btnClose.BackColor = System.Drawing.Color.Silver;
-            this.btnClose.FlatAppearance.BorderColor = System.Drawing.Color.DarkGreen;
+            this.btnClose.FlatAppearance.BorderColor = System.Drawing.Color.Indigo;
             this.btnClose.FlatAppearance.BorderSize = 2;
             this.btnClose.Font = new System.Drawing.Font("Candara", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
@@ -89,7 +79,7 @@
             // btnPrint
             // 
             this.btnPrint.BackColor = System.Drawing.Color.Silver;
-            this.btnPrint.FlatAppearance.BorderColor = System.Drawing.Color.DarkGreen;
+            this.btnPrint.FlatAppearance.BorderColor = System.Drawing.Color.Indigo;
             this.btnPrint.FlatAppearance.BorderSize = 2;
             this.btnPrint.Font = new System.Drawing.Font("Candara", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrint.Image = ((System.Drawing.Image)(resources.GetObject("btnPrint.Image")));
@@ -104,7 +94,7 @@
             // btnSave
             // 
             this.btnSave.BackColor = System.Drawing.Color.Silver;
-            this.btnSave.FlatAppearance.BorderColor = System.Drawing.Color.DarkGreen;
+            this.btnSave.FlatAppearance.BorderColor = System.Drawing.Color.Indigo;
             this.btnSave.FlatAppearance.BorderSize = 2;
             this.btnSave.Font = new System.Drawing.Font("Candara", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
@@ -117,93 +107,25 @@
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // label19
-            // 
-            this.label19.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(232, 45);
-            this.label19.Margin = new System.Windows.Forms.Padding(0);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(91, 16);
-            this.label19.TabIndex = 84;
-            this.label19.Text = "Program Title:";
-            this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // txtCopr
-            // 
-            this.txtCopr.BackColor = System.Drawing.Color.White;
-            this.txtCopr.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCopr.Location = new System.Drawing.Point(5, 62);
-            this.txtCopr.Margin = new System.Windows.Forms.Padding(0, 5, 0, 5);
-            this.txtCopr.Name = "txtCopr";
-            this.txtCopr.ReadOnly = true;
-            this.txtCopr.Size = new System.Drawing.Size(225, 25);
-            this.txtCopr.TabIndex = 83;
-            // 
-            // txtProgramTitle
-            // 
-            this.txtProgramTitle.BackColor = System.Drawing.Color.White;
-            this.txtProgramTitle.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtProgramTitle.Location = new System.Drawing.Point(233, 62);
-            this.txtProgramTitle.Margin = new System.Windows.Forms.Padding(0, 6, 0, 5);
-            this.txtProgramTitle.Name = "txtProgramTitle";
-            this.txtProgramTitle.ReadOnly = true;
-            this.txtProgramTitle.Size = new System.Drawing.Size(366, 25);
-            this.txtProgramTitle.TabIndex = 85;
-            // 
-            // label18
-            // 
-            this.label18.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(2, 45);
-            this.label18.Margin = new System.Windows.Forms.Padding(0);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(56, 16);
-            this.label18.TabIndex = 82;
-            this.label18.Text = "CoPR #:";
-            this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // cbxBatch
             // 
             this.cbxBatch.BackColor = System.Drawing.Color.White;
             this.cbxBatch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxBatch.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxBatch.FormattingEnabled = true;
-            this.cbxBatch.Location = new System.Drawing.Point(768, 62);
+            this.cbxBatch.Location = new System.Drawing.Point(65, 55);
             this.cbxBatch.Margin = new System.Windows.Forms.Padding(3, 6, 0, 3);
             this.cbxBatch.Name = "cbxBatch";
             this.cbxBatch.Size = new System.Drawing.Size(74, 25);
             this.cbxBatch.TabIndex = 88;
             this.cbxBatch.SelectedIndexChanged += new System.EventHandler(this.cbxBatch_SelectedIndexChanged);
             // 
-            // btnChangeCourse
-            // 
-            this.btnChangeCourse.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btnChangeCourse.AutoSize = true;
-            this.btnChangeCourse.BackColor = System.Drawing.Color.Silver;
-            this.btnChangeCourse.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnChangeCourse.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen;
-            this.btnChangeCourse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnChangeCourse.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChangeCourse.Image = ((System.Drawing.Image)(resources.GetObject("btnChangeCourse.Image")));
-            this.btnChangeCourse.Location = new System.Drawing.Point(600, 62);
-            this.btnChangeCourse.Margin = new System.Windows.Forms.Padding(0, 5, 3, 3);
-            this.btnChangeCourse.Name = "btnChangeCourse";
-            this.btnChangeCourse.Size = new System.Drawing.Size(80, 25);
-            this.btnChangeCourse.TabIndex = 86;
-            this.btnChangeCourse.Text = "SELECT";
-            this.btnChangeCourse.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnChangeCourse.UseVisualStyleBackColor = false;
-            this.btnChangeCourse.Click += new System.EventHandler(this.btnChangeCourse_Click);
-            // 
             // label20
             // 
             this.label20.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(712, 65);
+            this.label20.Location = new System.Drawing.Point(9, 58);
             this.label20.Margin = new System.Windows.Forms.Padding(0);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(57, 16);
@@ -233,14 +155,14 @@
             this.dgvGrades.AllowUserToDeleteRows = false;
             this.dgvGrades.AllowUserToResizeColumns = false;
             this.dgvGrades.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvGrades.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvGrades.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvGrades.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvGrades.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -280,6 +202,7 @@
             this.Padding = new System.Windows.Forms.Padding(5);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Grades";
+            this.Load += new System.EventHandler(this.Grades_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrades)).EndInit();
@@ -292,12 +215,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgvGrades;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.TextBox txtCopr;
-        private System.Windows.Forms.TextBox txtProgramTitle;
-        private System.Windows.Forms.Label label18;
         private System.Windows.Forms.ComboBox cbxBatch;
-        private System.Windows.Forms.Button btnChangeCourse;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Button btnPrint;
         private System.Windows.Forms.Button btnSave;

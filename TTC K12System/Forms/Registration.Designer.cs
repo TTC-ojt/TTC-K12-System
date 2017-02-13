@@ -38,10 +38,8 @@
             this.txtAge = new System.Windows.Forms.TextBox();
             this.nudBmonth = new System.Windows.Forms.NumericUpDown();
             this.nudBday = new System.Windows.Forms.NumericUpDown();
+            this.nudTuition = new System.Windows.Forms.NumericUpDown();
             this.nudByear = new System.Windows.Forms.NumericUpDown();
-            this.label20 = new System.Windows.Forms.Label();
-            this.txtProgramTitle = new System.Windows.Forms.TextBox();
-            this.btnChangeCourse = new System.Windows.Forms.Button();
             this.btnAddBatch = new System.Windows.Forms.Button();
             this.cbxBatch = new System.Windows.Forms.ComboBox();
             this.label22 = new System.Windows.Forms.Label();
@@ -69,6 +67,7 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -79,6 +78,7 @@
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudBmonth)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudBday)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTuition)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudByear)).BeginInit();
             this.SuspendLayout();
             // 
@@ -93,10 +93,8 @@
             this.panel1.Controls.Add(this.txtAge);
             this.panel1.Controls.Add(this.nudBmonth);
             this.panel1.Controls.Add(this.nudBday);
+            this.panel1.Controls.Add(this.nudTuition);
             this.panel1.Controls.Add(this.nudByear);
-            this.panel1.Controls.Add(this.label20);
-            this.panel1.Controls.Add(this.txtProgramTitle);
-            this.panel1.Controls.Add(this.btnChangeCourse);
             this.panel1.Controls.Add(this.btnAddBatch);
             this.panel1.Controls.Add(this.cbxBatch);
             this.panel1.Controls.Add(this.label22);
@@ -124,6 +122,7 @@
             this.panel1.Controls.Add(this.label12);
             this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.label10);
+            this.panel1.Controls.Add(this.label23);
             this.panel1.Controls.Add(this.label14);
             this.panel1.Controls.Add(this.label13);
             this.panel1.Controls.Add(this.label9);
@@ -257,6 +256,23 @@
             this.nudBday.ValueChanged += new System.EventHandler(this.CalculateAge);
             this.nudBday.Leave += new System.EventHandler(this.CalculateAge);
             // 
+            // nudTuition
+            // 
+            this.nudTuition.BackColor = System.Drawing.Color.White;
+            this.nudTuition.DecimalPlaces = 2;
+            this.nudTuition.Font = new System.Drawing.Font("Bookman Old Style", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nudTuition.Location = new System.Drawing.Point(616, 439);
+            this.nudTuition.Margin = new System.Windows.Forms.Padding(0);
+            this.nudTuition.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
+            this.nudTuition.Name = "nudTuition";
+            this.nudTuition.Size = new System.Drawing.Size(80, 25);
+            this.nudTuition.TabIndex = 104;
+            this.nudTuition.Leave += new System.EventHandler(this.CalculateAge);
+            // 
             // nudByear
             // 
             this.nudByear.BackColor = System.Drawing.Color.White;
@@ -284,60 +300,16 @@
             this.nudByear.ValueChanged += new System.EventHandler(this.CalculateAge);
             this.nudByear.Leave += new System.EventHandler(this.CalculateAge);
             // 
-            // label20
-            // 
-            this.label20.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(9, 57);
-            this.label20.Margin = new System.Windows.Forms.Padding(0);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(91, 16);
-            this.label20.TabIndex = 94;
-            this.label20.Text = "Program Title:";
-            this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // txtProgramTitle
-            // 
-            this.txtProgramTitle.BackColor = System.Drawing.Color.White;
-            this.txtProgramTitle.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtProgramTitle.Location = new System.Drawing.Point(100, 53);
-            this.txtProgramTitle.Margin = new System.Windows.Forms.Padding(0, 6, 0, 5);
-            this.txtProgramTitle.Name = "txtProgramTitle";
-            this.txtProgramTitle.ReadOnly = true;
-            this.txtProgramTitle.Size = new System.Drawing.Size(342, 25);
-            this.txtProgramTitle.TabIndex = 95;
-            // 
-            // btnChangeCourse
-            // 
-            this.btnChangeCourse.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btnChangeCourse.AutoSize = true;
-            this.btnChangeCourse.BackColor = System.Drawing.Color.Silver;
-            this.btnChangeCourse.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnChangeCourse.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen;
-            this.btnChangeCourse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnChangeCourse.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChangeCourse.Image = ((System.Drawing.Image)(resources.GetObject("btnChangeCourse.Image")));
-            this.btnChangeCourse.Location = new System.Drawing.Point(442, 53);
-            this.btnChangeCourse.Margin = new System.Windows.Forms.Padding(0, 5, 3, 3);
-            this.btnChangeCourse.Name = "btnChangeCourse";
-            this.btnChangeCourse.Size = new System.Drawing.Size(80, 25);
-            this.btnChangeCourse.TabIndex = 96;
-            this.btnChangeCourse.Text = "SELECT";
-            this.btnChangeCourse.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnChangeCourse.UseVisualStyleBackColor = false;
-            this.btnChangeCourse.Click += new System.EventHandler(this.btnChangeCourse_Click);
-            // 
             // btnAddBatch
             // 
             this.btnAddBatch.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btnAddBatch.AutoSize = true;
-            this.btnAddBatch.FlatAppearance.BorderColor = System.Drawing.Color.DarkGreen;
+            this.btnAddBatch.FlatAppearance.BorderColor = System.Drawing.Color.Indigo;
             this.btnAddBatch.FlatAppearance.BorderSize = 0;
             this.btnAddBatch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddBatch.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddBatch.Image = ((System.Drawing.Image)(resources.GetObject("btnAddBatch.Image")));
-            this.btnAddBatch.Location = new System.Drawing.Point(725, 46);
+            this.btnAddBatch.Location = new System.Drawing.Point(204, 46);
             this.btnAddBatch.Margin = new System.Windows.Forms.Padding(0, 1, 3, 3);
             this.btnAddBatch.Name = "btnAddBatch";
             this.btnAddBatch.Size = new System.Drawing.Size(36, 36);
@@ -349,10 +321,9 @@
             // 
             this.cbxBatch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cbxBatch.BackColor = System.Drawing.Color.White;
-            this.cbxBatch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxBatch.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxBatch.FormattingEnabled = true;
-            this.cbxBatch.Location = new System.Drawing.Point(643, 53);
+            this.cbxBatch.Location = new System.Drawing.Point(122, 53);
             this.cbxBatch.Margin = new System.Windows.Forms.Padding(0);
             this.cbxBatch.Name = "cbxBatch";
             this.cbxBatch.Size = new System.Drawing.Size(82, 25);
@@ -364,7 +335,7 @@
             this.label22.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(583, 57);
+            this.label22.Location = new System.Drawing.Point(62, 57);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(57, 16);
             this.label22.TabIndex = 89;
@@ -499,7 +470,7 @@
             // txtStudentLRN
             // 
             this.txtStudentLRN.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtStudentLRN.Location = new System.Drawing.Point(522, 98);
+            this.txtStudentLRN.Location = new System.Drawing.Point(41, 142);
             this.txtStudentLRN.Name = "txtStudentLRN";
             this.txtStudentLRN.Size = new System.Drawing.Size(260, 25);
             this.txtStudentLRN.TabIndex = 4;
@@ -508,7 +479,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(490, 102);
+            this.label3.Location = new System.Drawing.Point(9, 146);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(35, 16);
             this.label3.TabIndex = 3;
@@ -517,7 +488,7 @@
             // txtStudentNumber
             // 
             this.txtStudentNumber.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtStudentNumber.Location = new System.Drawing.Point(106, 98);
+            this.txtStudentNumber.Location = new System.Drawing.Point(490, 54);
             this.txtStudentNumber.Name = "txtStudentNumber";
             this.txtStudentNumber.ReadOnly = true;
             this.txtStudentNumber.Size = new System.Drawing.Size(244, 25);
@@ -593,11 +564,21 @@
             this.label10.TabIndex = 3;
             this.label10.Text = "Gender:";
             // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.Location = new System.Drawing.Point(613, 420);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(47, 16);
+            this.label23.TabIndex = 3;
+            this.label23.Text = "Tuition";
+            // 
             // label14
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(359, 420);
+            this.label14.Location = new System.Drawing.Point(366, 420);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(139, 16);
             this.label14.TabIndex = 3;
@@ -637,7 +618,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(4, 101);
+            this.label2.Location = new System.Drawing.Point(388, 57);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(106, 16);
             this.label2.TabIndex = 3;
@@ -648,7 +629,7 @@
             this.label5.BackColor = System.Drawing.Color.Indigo;
             this.label5.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(7, 137);
+            this.label5.Location = new System.Drawing.Point(7, 95);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(793, 32);
             this.label5.TabIndex = 0;
@@ -677,11 +658,14 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Registration";
             this.Padding = new System.Windows.Forms.Padding(5);
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PersonalInformation";
+            this.Load += new System.EventHandler(this.Registration_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudBmonth)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudBday)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTuition)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudByear)).EndInit();
             this.ResumeLayout(false);
 
@@ -721,9 +705,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.TextBox txtProgramTitle;
-        private System.Windows.Forms.Button btnChangeCourse;
         private System.Windows.Forms.Button btnAddBatch;
         private System.Windows.Forms.ComboBox cbxBatch;
         private System.Windows.Forms.Label label22;
@@ -736,5 +717,7 @@
         private System.Windows.Forms.NumericUpDown nudBmonth;
         private System.Windows.Forms.NumericUpDown nudBday;
         private System.Windows.Forms.NumericUpDown nudByear;
+        private System.Windows.Forms.NumericUpDown nudTuition;
+        private System.Windows.Forms.Label label23;
     }
 }

@@ -10,9 +10,12 @@ namespace TTC_K12System.Classes
 
         internal Grade()
         {
+            ID = 0;
+            SubjectID = 0;
+            StudentID = 0;
+            Score = "";
             Remarks = "";
         }
-
 
         internal int ID { get; set; }
         internal int SubjectID { get; set; }
@@ -53,6 +56,8 @@ namespace TTC_K12System.Classes
             return grade;
         }
 
+
+
         internal void Save()
         {
             try
@@ -61,14 +66,8 @@ namespace TTC_K12System.Classes
                 {
                     MySqlCommand cmd = new MySqlCommand();
                     cmd.Connection = con;
-                    if (ID > 0)
-                    {
-                        cmd.CommandText = "UPDATE grades SET grade = @grade, remarks = @remarks WHERE subject_id = @subject_id AND student_id = @student_id";
-                    }
-                    else
-                    {
-                        cmd.CommandText = "INSERT INTO grades (subject_id, student_id, grade, remarks) VALUES (@subject_id, @student_id, @grade, @remarks)";
-                    }
+                    if (ID > 0) cmd.CommandText = "UPDATE grades SET grade = @grade, remarks = @remarks WHERE subject_id = @subject_id AND student_id = @student_id";
+                    else cmd.CommandText = "INSERT INTO grades (subject_id, student_id, grade, remarks) VALUES (@subject_id, @student_id, @grade, @remarks)";
                     cmd.Parameters.AddWithValue("subject_id", SubjectID);
                     cmd.Parameters.AddWithValue("student_id", StudentID);
                     cmd.Parameters.AddWithValue("grade", Score);

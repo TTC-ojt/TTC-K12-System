@@ -18,7 +18,6 @@ namespace TTC_K12System.Forms
 
         private Classes.Student student = new Classes.Student();
         private Classes.Batch batch = new Classes.Batch();
-        private Classes.Program program = new Classes.Program();
         private List<Classes.Student> students = new List<Classes.Student>();
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -41,13 +40,12 @@ namespace TTC_K12System.Forms
 
         private void LoadStudents()
         {
-            students = Classes.Student.Find(txtSearch.Text, program.ID, batch.ID);
+            students = Classes.Student.Find(txtSearch.Text, batch.ID);
             dgvStudentsLists.Rows.Clear();
             foreach (Classes.Student student in students)
             {
                 Classes.Batch batch = Classes.Batch.GetByID(student.BatchID);
-                Classes.Program program = Classes.Program.getByID(batch.ProgramID);
-                dgvStudentsLists.Rows.Add(student.ID, student.Number, student.GetFullName(), program.Title, batch.Number);
+                dgvStudentsLists.Rows.Add(student.ID, student.Number, student.GetFullName(), batch.Number);
             }
         }
 
@@ -64,23 +62,9 @@ namespace TTC_K12System.Forms
             }
         }
 
-        private void btnChangeCourse_Click(object sender, EventArgs e)
-        {
-            txtSearch.Clear();
-            ChooseProgram vCProgram = new ChooseProgram();
-            vCProgram.ShowDialog();
-            program = vCProgram.program;
-            if (program != null) LoadProgram();
-        }
-
-        private void LoadProgram()
-        {
-            txtProgramTitle.Text = program.Title;
-            LoadBatches();
-        }
         private void LoadBatches()
         {
-            List<Classes.Batch> batches = Classes.Batch.GetAllByProgram(program.ID);
+            List<Classes.Batch> batches = Classes.Batch.GetAll();
             cbxBatch.Items.Clear();
             foreach (Classes.Batch batch in batches)
             {
@@ -91,7 +75,7 @@ namespace TTC_K12System.Forms
         private void cbxBatch_SelectedIndexChanged(object sender, EventArgs e)
         {
             short Number = Convert.ToInt16(cbxBatch.SelectedItem);
-            batch = Classes.Batch.GetByProgramAndNumber(program.ID, Number);
+            batch = Classes.Batch.GetByNumber(Number);
             LoadStudents();
         }
 
@@ -118,6 +102,11 @@ namespace TTC_K12System.Forms
             {
                 dgvStudentsLists.Rows.Clear();
             }
+        }
+
+        private void ListOfStudents_Load(object sender, EventArgs e)
+        {
+            LoadBatches();
         }
     }
 }

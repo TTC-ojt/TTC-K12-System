@@ -29,29 +29,25 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ListOfStudents));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.cbxBatch = new System.Windows.Forms.ComboBox();
             this.label20 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.txtProgramTitle = new System.Windows.Forms.TextBox();
-            this.btnChangeCourse = new System.Windows.Forms.Button();
             this.btnPrint = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
             this.dgvStudentsLists = new System.Windows.Forms.DataGridView();
-            this.colStudentID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.studentNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.studentName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnProfile = new System.Windows.Forms.Button();
             this.printDocument = new System.Drawing.Printing.PrintDocument();
             this.printPreviewDialog = new System.Windows.Forms.PrintPreviewDialog();
+            this.colStudentID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.studentNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.studentName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudentsLists)).BeginInit();
             this.SuspendLayout();
@@ -64,9 +60,6 @@
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.cbxBatch);
             this.panel1.Controls.Add(this.label20);
-            this.panel1.Controls.Add(this.label19);
-            this.panel1.Controls.Add(this.txtProgramTitle);
-            this.panel1.Controls.Add(this.btnChangeCourse);
             this.panel1.Controls.Add(this.btnPrint);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.btnClose);
@@ -124,7 +117,7 @@
             this.cbxBatch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxBatch.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxBatch.FormattingEnabled = true;
-            this.cbxBatch.Location = new System.Drawing.Point(498, 108);
+            this.cbxBatch.Location = new System.Drawing.Point(647, 49);
             this.cbxBatch.Margin = new System.Windows.Forms.Padding(3, 6, 0, 3);
             this.cbxBatch.Name = "cbxBatch";
             this.cbxBatch.Size = new System.Drawing.Size(102, 25);
@@ -136,7 +129,7 @@
             this.label20.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(495, 92);
+            this.label20.Location = new System.Drawing.Point(587, 53);
             this.label20.Margin = new System.Windows.Forms.Padding(0);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(57, 16);
@@ -144,54 +137,10 @@
             this.label20.Text = "Batch #:";
             this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label19
-            // 
-            this.label19.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(7, 92);
-            this.label19.Margin = new System.Windows.Forms.Padding(0);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(91, 16);
-            this.label19.TabIndex = 82;
-            this.label19.Text = "Program Title:";
-            this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // txtProgramTitle
-            // 
-            this.txtProgramTitle.BackColor = System.Drawing.Color.White;
-            this.txtProgramTitle.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtProgramTitle.Location = new System.Drawing.Point(10, 108);
-            this.txtProgramTitle.Margin = new System.Windows.Forms.Padding(0, 6, 0, 5);
-            this.txtProgramTitle.Name = "txtProgramTitle";
-            this.txtProgramTitle.ReadOnly = true;
-            this.txtProgramTitle.Size = new System.Drawing.Size(375, 25);
-            this.txtProgramTitle.TabIndex = 83;
-            // 
-            // btnChangeCourse
-            // 
-            this.btnChangeCourse.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btnChangeCourse.AutoSize = true;
-            this.btnChangeCourse.BackColor = System.Drawing.Color.Silver;
-            this.btnChangeCourse.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnChangeCourse.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen;
-            this.btnChangeCourse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnChangeCourse.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChangeCourse.Image = ((System.Drawing.Image)(resources.GetObject("btnChangeCourse.Image")));
-            this.btnChangeCourse.Location = new System.Drawing.Point(385, 108);
-            this.btnChangeCourse.Margin = new System.Windows.Forms.Padding(0, 5, 3, 3);
-            this.btnChangeCourse.Name = "btnChangeCourse";
-            this.btnChangeCourse.Size = new System.Drawing.Size(80, 25);
-            this.btnChangeCourse.TabIndex = 84;
-            this.btnChangeCourse.Text = "SELECT";
-            this.btnChangeCourse.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnChangeCourse.UseVisualStyleBackColor = false;
-            this.btnChangeCourse.Click += new System.EventHandler(this.btnChangeCourse_Click);
-            // 
             // btnPrint
             // 
             this.btnPrint.BackColor = System.Drawing.Color.Silver;
-            this.btnPrint.FlatAppearance.BorderColor = System.Drawing.Color.DarkGreen;
+            this.btnPrint.FlatAppearance.BorderColor = System.Drawing.Color.Indigo;
             this.btnPrint.FlatAppearance.BorderSize = 2;
             this.btnPrint.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen;
             this.btnPrint.Font = new System.Drawing.Font("Candara", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -222,7 +171,7 @@
             // btnClose
             // 
             this.btnClose.BackColor = System.Drawing.Color.Silver;
-            this.btnClose.FlatAppearance.BorderColor = System.Drawing.Color.DarkGreen;
+            this.btnClose.FlatAppearance.BorderColor = System.Drawing.Color.Indigo;
             this.btnClose.FlatAppearance.BorderSize = 2;
             this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen;
             this.btnClose.Font = new System.Drawing.Font("Candara", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -243,83 +192,43 @@
             this.dgvStudentsLists.AllowUserToDeleteRows = false;
             this.dgvStudentsLists.AllowUserToResizeColumns = false;
             this.dgvStudentsLists.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvStudentsLists.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvStudentsLists.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvStudentsLists.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvStudentsLists.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colStudentID,
             this.studentNumber,
             this.studentName,
-            this.Column1,
             this.Column2});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DarkGreen;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvStudentsLists.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvStudentsLists.Location = new System.Drawing.Point(5, 148);
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Indigo;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvStudentsLists.DefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvStudentsLists.Location = new System.Drawing.Point(5, 92);
             this.dgvStudentsLists.Margin = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.dgvStudentsLists.MultiSelect = false;
             this.dgvStudentsLists.Name = "dgvStudentsLists";
             this.dgvStudentsLists.ReadOnly = true;
             this.dgvStudentsLists.RowHeadersVisible = false;
             this.dgvStudentsLists.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvStudentsLists.Size = new System.Drawing.Size(759, 412);
+            this.dgvStudentsLists.Size = new System.Drawing.Size(759, 468);
             this.dgvStudentsLists.TabIndex = 52;
             this.dgvStudentsLists.SelectionChanged += new System.EventHandler(this.dgvStudentsLists_SelectionChanged);
-            // 
-            // colStudentID
-            // 
-            this.colStudentID.HeaderText = "ID";
-            this.colStudentID.Name = "colStudentID";
-            this.colStudentID.ReadOnly = true;
-            this.colStudentID.Visible = false;
-            // 
-            // studentNumber
-            // 
-            this.studentNumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.studentNumber.FillWeight = 20F;
-            this.studentNumber.HeaderText = "ULI";
-            this.studentNumber.Name = "studentNumber";
-            this.studentNumber.ReadOnly = true;
-            // 
-            // studentName
-            // 
-            this.studentName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.studentName.FillWeight = 30F;
-            this.studentName.HeaderText = "NAME";
-            this.studentName.Name = "studentName";
-            this.studentName.ReadOnly = true;
-            // 
-            // Column1
-            // 
-            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column1.FillWeight = 30F;
-            this.Column1.HeaderText = "PROGRAM";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column2.FillWeight = 15F;
-            this.Column2.HeaderText = "BATCH";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
             // 
             // btnProfile
             // 
             this.btnProfile.BackColor = System.Drawing.Color.Silver;
-            this.btnProfile.FlatAppearance.BorderColor = System.Drawing.Color.DarkGreen;
+            this.btnProfile.FlatAppearance.BorderColor = System.Drawing.Color.Indigo;
             this.btnProfile.FlatAppearance.BorderSize = 2;
             this.btnProfile.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen;
             this.btnProfile.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -349,6 +258,37 @@
             this.printPreviewDialog.Name = "printPreviewDialog1";
             this.printPreviewDialog.Visible = false;
             // 
+            // colStudentID
+            // 
+            this.colStudentID.HeaderText = "ID";
+            this.colStudentID.Name = "colStudentID";
+            this.colStudentID.ReadOnly = true;
+            this.colStudentID.Visible = false;
+            // 
+            // studentNumber
+            // 
+            this.studentNumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.studentNumber.FillWeight = 20F;
+            this.studentNumber.HeaderText = "LRN";
+            this.studentNumber.Name = "studentNumber";
+            this.studentNumber.ReadOnly = true;
+            // 
+            // studentName
+            // 
+            this.studentName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.studentName.FillWeight = 30F;
+            this.studentName.HeaderText = "NAME";
+            this.studentName.Name = "studentName";
+            this.studentName.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column2.FillWeight = 15F;
+            this.Column2.HeaderText = "BATCH";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
             // ListOfStudents
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -361,6 +301,7 @@
             this.Padding = new System.Windows.Forms.Padding(5);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ListOfStudents";
+            this.Load += new System.EventHandler(this.ListOfStudents_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudentsLists)).EndInit();
@@ -378,9 +319,6 @@
         private System.Windows.Forms.Button btnProfile;
         private System.Drawing.Printing.PrintDocument printDocument;
         private System.Windows.Forms.PrintPreviewDialog printPreviewDialog;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.TextBox txtProgramTitle;
-        private System.Windows.Forms.Button btnChangeCourse;
         private System.Windows.Forms.ComboBox cbxBatch;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.TextBox txtSearch;
@@ -389,7 +327,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colStudentID;
         private System.Windows.Forms.DataGridViewTextBoxColumn studentNumber;
         private System.Windows.Forms.DataGridViewTextBoxColumn studentName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
     }
 }

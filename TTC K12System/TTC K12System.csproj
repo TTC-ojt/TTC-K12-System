@@ -56,24 +56,36 @@
   <ItemGroup>
     <Compile Include="Classes\Batch.cs" />
     <Compile Include="Classes\Contact.cs" />
+    <Compile Include="Classes\Document.cs" />
     <Compile Include="Classes\Grade.cs" />
+    <Compile Include="Classes\Insurance.cs" />
     <Compile Include="Classes\Profile.cs" />
-    <Compile Include="Classes\Program.cs" />
     <Compile Include="Classes\Student.cs" />
     <Compile Include="Classes\Subject.cs" />
-    <Compile Include="Classes\Teacher.cs" />
     <Compile Include="Classes\Transaction.cs" />
-    <Compile Include="Forms\ChooseProgram.cs">
+    <Compile Include="Forms\ConnectionSettings.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\ChooseProgram.designer.cs">
-      <DependentUpon>ChooseProgram.cs</DependentUpon>
+    <Compile Include="Forms\ConnectionSettings.designer.cs">
+      <DependentUpon>ConnectionSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Documents.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Documents.designer.cs">
+      <DependentUpon>Documents.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Grades.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Grades.designer.cs">
       <DependentUpon>Grades.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Insurances.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Insurances.designer.cs">
+      <DependentUpon>Insurances.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\ListOfStudents.cs">
       <SubType>Form</SubType>
@@ -87,11 +99,11 @@
     <Compile Include="Forms\Pay.designer.cs">
       <DependentUpon>Pay.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ProgramProfile.cs">
+    <Compile Include="Forms\Print\StatementOfAccount.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\ProgramProfile.designer.cs">
-      <DependentUpon>ProgramProfile.cs</DependentUpon>
+    <Compile Include="Forms\Print\StatementOfAccount.designer.cs">
+      <DependentUpon>StatementOfAccount.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\StudentInfo.cs">
       <SubType>Form</SubType>
@@ -111,17 +123,17 @@
     <Compile Include="Forms\SubjectMaintenance.designer.cs">
       <DependentUpon>SubjectMaintenance.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Teachers.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Teachers.designer.cs">
-      <DependentUpon>Teachers.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\TransactionHistory.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\TransactionHistory.designer.cs">
       <DependentUpon>TransactionHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\UpdateTuition.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\UpdateTuition.designer.cs">
+      <DependentUpon>UpdateTuition.cs</DependentUpon>
     </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
@@ -131,11 +143,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Forms\ChooseProgram.resx">
-      <DependentUpon>ChooseProgram.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\ConnectionSettings.resx">
+      <DependentUpon>ConnectionSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Documents.resx">
+      <DependentUpon>Documents.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Grades.resx">
       <DependentUpon>Grades.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Insurances.resx">
+      <DependentUpon>Insurances.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ListOfStudents.resx">
       <DependentUpon>ListOfStudents.cs</DependentUpon>
@@ -143,8 +161,8 @@
     <EmbeddedResource Include="Forms\Pay.resx">
       <DependentUpon>Pay.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ProgramProfile.resx">
-      <DependentUpon>ProgramProfile.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Print\StatementOfAccount.resx">
+      <DependentUpon>StatementOfAccount.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\StudentInfo.resx">
       <DependentUpon>StudentInfo.cs</DependentUpon>
@@ -155,11 +173,11 @@
     <EmbeddedResource Include="Forms\SubjectMaintenance.resx">
       <DependentUpon>SubjectMaintenance.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Teachers.resx">
-      <DependentUpon>Teachers.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\TransactionHistory.resx">
       <DependentUpon>TransactionHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UpdateTuition.resx">
+      <DependentUpon>UpdateTuition.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>

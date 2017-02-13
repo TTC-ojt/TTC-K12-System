@@ -117,49 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="btnClose.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAASFJREFUSEvt
-        lrsOgkAQRfkkC6FV1Jbe2t+w8yO1FDXGRBMb8VG57p0sCeCw7IvYOMnJJswwh1kIEP3j51GM48EzjUc+
-        oIdq1x0oLibJtpgmIgjoZXIBsjBnG/gg5ao9HzQtd2IIdFPfZsMxe1IA0FtpvkMnvs8z9niNLOWPS5zE
-        r9VSiMuVVi4PqCbfi8dizubtxXIKsTuQuE1eXhgh5dzkThNjijZ5TdrIVXESA05uKgXOYtCUm0qBlxiQ
-        /HiykgJvMW3v2W5a4CUmaSmEvDJ5b1tdkyqR7mlv4iTmpGXOVG4vNniB1ORyDf4C0W0lat7rDa1c3klM
-        aD4AJriLPdGKf/YjgOjp1ydX7duDpg4pR6+uaauBYtwXH6yE/+gnougDEEFsZNZkz8AAAAAASUVORK5C
-        YII=
-</value>
-  </data>
-  <data name="button1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAZ9JREFUSEtj
-        GAWDAvSf+nFgwqkf+8nF/ad+GUCNIg1MOPXzPyW4//RvB6hRpAFshpGCh47FDg4OCk5OTvXYDCMFJ1T0
-        zAeaRbzlIMVAi7EaRgoOTSn4DzSnAWosbpCQkKAAxPWRkZH9Pj4++4umrL9PCQ5LyDgeHBw8H2QmyGyo
-        NagAKCEAxO8TExP/0wKDzAbZAbUOAYCCBdg0UIptJmf8d+pKB7NBdkCtQwCgYAO6Jmpgv6oUMAaxQXZA
-        rUMAWlmMjAeXxcCUPAGI/9MYT4BahwCurq4TQHmXlhhkB9Q6BABKNKArpAHGDGqQIEyBra3tf21t7f8G
-        nnFAHEs21jGyAJsFMxdkB9Q6BAAJwhRYW1v/V1FR+e+09CtFWNslEmwWzFyQHVDrEAAkiKQAjLGVv6Rg
-        aFmNjDEthlUMyBjZELOuO//Nuglj31mPcFoMsgNqHSoASqKkbGSLQxY8JQonr3qFy2LMFI0OQC4DAWSL
-        i7a8/1+0FTfuOPINrhaGc/tXF4DMgRpLPEA2RLLsEl4MchiyehAebXONggEADAwAcaIou36GnpsAAAAA
-        SUVORK5CYII=
-</value>
-  </data>
-  <data name="btnSave.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAASxJREFUSEtj
-        GAUDAv47GAh8dzS1f2dl4H3LWCcPhs+HBTWcyM+fiAufrqpqONfZlgfDz2NCvUHmgMyDGo0ffHYxcfji
-        bPb/pY3R/2MaGnC8u7j8/4Z9R4nGj5Oi/oPM+eJsep4oy8mx2CMk+r+akQWYhokhLCbSctpYTITltLPY
-        7D/IbKg1mGDkWvzaFtXiPZk5KJYRwq+DPMizGIRBloN8DsO3YsOx4jtADPIhDGOzFISJtpjaeNRiFACz
-        +HtRxn9qAZBZA2Lxr4WzybP49sMn/8/fuEMyhgGyLf724+f/z1+/kYxhgGyL33749P/5m3ckYxgg2+In
-        L1+Dg5tUDANkW0wpGE1cWAHM4m9p0VBtlIPvdaXEW0wLjNdiULsIpIAWmOim7iigLmBgAACIxVWDKKgR
-        PwAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <metadata name="id.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="courseTitle.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="tuitionFee.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
 </root>

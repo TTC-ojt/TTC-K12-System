@@ -15,8 +15,7 @@ namespace TTC_K12System.Forms
         {
             InitializeComponent();
         }
-
-        private Classes.Program program;
+        
         private Classes.Batch batch;
         private List<Classes.Student> students = new List<Classes.Student>();
         private List<Classes.Subject> subjects = new List<Classes.Subject>();
@@ -27,25 +26,15 @@ namespace TTC_K12System.Forms
             Program.main.Show();
         }
 
-        private void btnChangeCourse_Click(object sender, EventArgs e)
-        {
-            ChooseProgram vCProgram = new ChooseProgram();
-            vCProgram.ShowDialog();
-            program = vCProgram.program;
-            if (program != null) LoadProgram();
-        }
-
         private void LoadProgram()
         {
-            txtCopr.Text = program.Copr;
-            txtProgramTitle.Text = program.Title;
             LoadSubjects();
             LoadBatches();
         }
 
         private void LoadSubjects()
         {
-            subjects = Classes.Subject.getAllByProgram(program.ID);
+            subjects = Classes.Subject.getAll();
             if (dgvGrades.Columns.Count > 2)
             {
                 int cols = dgvGrades.Columns.Count;
@@ -72,7 +61,7 @@ namespace TTC_K12System.Forms
         }
         private void LoadBatches()
         {
-            List<Classes.Batch> batches = Classes.Batch.GetAllByProgram(program.ID);
+            List<Classes.Batch> batches = Classes.Batch.GetAll();
             cbxBatch.Items.Clear();
             foreach (Classes.Batch batch in batches)
             {
@@ -83,7 +72,7 @@ namespace TTC_K12System.Forms
         private void cbxBatch_SelectedIndexChanged(object sender, EventArgs e)
         {
             short Number = Convert.ToInt16(cbxBatch.SelectedItem);
-            batch = Classes.Batch.GetByProgramAndNumber(program.ID, Number);
+            batch = Classes.Batch.GetByNumber(Number);
             LoadStudents();
         }
 
@@ -102,7 +91,7 @@ namespace TTC_K12System.Forms
                 foreach (Classes.Subject subject in subjects)
                 {
                     grades[i] = Classes.Grade.getBySubjectAndStudent(subject.ID, student.ID).Score;
-                    if (!string.IsNullOrWhiteSpace(grades[i]) && grades[i].All(char.IsDigit))
+                    if (!string.IsNullOrWhiteSpace(grades[i]) && grades[i].Any(char.IsDigit))
                     {
                         sum += Convert.ToDecimal(grades[i]);
                         count += 1;
@@ -123,13 +112,14 @@ namespace TTC_K12System.Forms
                 foreach (Classes.Subject subject in subjects)
                 {
                     string score = row.Cells["dgc" + subject.Code].Value.ToString();
-                    Classes.Grade grade = new Classes.Grade();
+                    Classes.Grade grade = Classes.Grade.getBySubjectAndStudent(subject.ID, student_id);
                     grade.StudentID = student_id;
                     grade.SubjectID = subject.ID;
                     grade.Score = score;
                     grade.Save();
                 }
             }
+            LoadStudents();
         }
 
         private void dgvGrades_CellEndEdit(object sender, DataGridViewCellEventArgs e)
@@ -147,7 +137,12 @@ namespace TTC_K12System.Forms
                 }
             }
             if (count > 0) row.Cells["dgcRemarks"].Value = (sum / count).ToString("N");
-            else row.Cells["Remarks"].Value = 0m.ToString("N");
+            else row.Cells["dgcRemarks"].Value = 0m.ToString("N");
+        }
+
+        private void Grades_Load(object sender, EventArgs e)
+        {
+            LoadProgram();
         }
     }
 }

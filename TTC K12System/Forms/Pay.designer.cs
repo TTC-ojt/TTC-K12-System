@@ -266,7 +266,7 @@
             // btnSave
             // 
             this.btnSave.BackColor = System.Drawing.Color.Silver;
-            this.btnSave.FlatAppearance.BorderColor = System.Drawing.Color.DarkGreen;
+            this.btnSave.FlatAppearance.BorderColor = System.Drawing.Color.Indigo;
             this.btnSave.FlatAppearance.BorderSize = 2;
             this.btnSave.Font = new System.Drawing.Font("Candara", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
@@ -282,7 +282,7 @@
             // btnClose
             // 
             this.btnClose.BackColor = System.Drawing.Color.Silver;
-            this.btnClose.FlatAppearance.BorderColor = System.Drawing.Color.DarkGreen;
+            this.btnClose.FlatAppearance.BorderColor = System.Drawing.Color.Indigo;
             this.btnClose.FlatAppearance.BorderSize = 2;
             this.btnClose.Font = new System.Drawing.Font("Candara", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));

@@ -9,10 +9,10 @@ namespace TTC_K12System.Classes
     {
         //PROPERTIES
         internal int ID { get; set; }
-        internal int ProgramID { get; set; }
         internal short Number { get; set; }
+        internal string Year { get; set; }
 
-        internal static List<Batch> GetAllByProgram(int ProgramID)
+        internal static List<Batch> GetAll()
         {
             List<Batch> batches = new List<Batch>();
             try
@@ -21,8 +21,7 @@ namespace TTC_K12System.Classes
                 {
                     MySqlCommand cmd = new MySqlCommand();
                     cmd.Connection = con;
-                    cmd.CommandText = "SELECT * FROM batches WHERE program_id = @program_id";
-                    cmd.Parameters.AddWithValue("program_id", ProgramID);
+                    cmd.CommandText = "SELECT * FROM batches";
                     con.Open();
                     using (MySqlDataReader rdr = cmd.ExecuteReader())
                     {
@@ -30,8 +29,8 @@ namespace TTC_K12System.Classes
                         {
                             Batch batch = new Batch();
                             batch.ID = rdr.GetInt32(0);
-                            batch.ProgramID = rdr.GetInt32(1);
-                            batch.Number = rdr.GetInt16(2);
+                            batch.Number = rdr.GetInt16(1);
+                            batch.Year = rdr.GetString(2);
                             batches.Add(batch);
                         }
                     }
@@ -61,8 +60,8 @@ namespace TTC_K12System.Classes
                         while (rdr.Read())
                         {
                             batch.ID = rdr.GetInt32(0);
-                            batch.ProgramID = rdr.GetInt32(1);
-                            batch.Number = rdr.GetInt16(2);
+                            batch.Number = rdr.GetInt16(1);
+                            batch.Year = rdr.GetString(2);
                         }
                     }
                 }
@@ -74,18 +73,17 @@ namespace TTC_K12System.Classes
             return batch;
         }
 
-        internal static Batch New(int ProgramID)
+        internal void Save()
         {
-            int ID = 0;
             try
             {
                 using (MySqlConnection con = new MySqlConnection(Builder.ConnectionString))
                 {
                     MySqlCommand cmd = new MySqlCommand();
                     cmd.Connection = con;
-                    cmd.CommandText = "INSERT INTO batches (program_id, number) VALUES (@program_id, @number)";
-                    cmd.Parameters.AddWithValue("program_id", ProgramID);
-                    cmd.Parameters.AddWithValue("number", GetNextNumber(ProgramID));
+                    cmd.CommandText = "INSERT INTO batches (number, year) VALUES (@number, @year)";
+                    cmd.Parameters.AddWithValue("number", Number);
+                    cmd.Parameters.AddWithValue("year", Year);
                     con.Open();
                     cmd.ExecuteNonQuery();
                     if (ID == 0) ID = Convert.ToInt32(cmd.LastInsertedId);
@@ -95,10 +93,9 @@ namespace TTC_K12System.Classes
             {
                 ErrorTrapper.Log(ex, LogOptions.PromptTheUser);
             }
-            return GetByID(ID);
         }
 
-        internal static Batch GetByProgramAndNumber(int ProgramID, short Number)
+        internal static Batch GetByNumber(short Number)
         {
             Batch batch = new Batch();
             try
@@ -107,8 +104,7 @@ namespace TTC_K12System.Classes
                 {
                     MySqlCommand cmd = new MySqlCommand();
                     cmd.Connection = con;
-                    cmd.CommandText = "SELECT * FROM batches WHERE program_id = @program_id AND number = @number";
-                    cmd.Parameters.AddWithValue("program_id", ProgramID);
+                    cmd.CommandText = "SELECT * FROM batches WHERE number = @number";
                     cmd.Parameters.AddWithValue("number", Number);
                     con.Open();
                     using (MySqlDataReader rdr = cmd.ExecuteReader())
@@ -116,8 +112,8 @@ namespace TTC_K12System.Classes
                         while (rdr.Read())
                         {
                             batch.ID = rdr.GetInt32(0);
-                            batch.ProgramID = rdr.GetInt32(1);
-                            batch.Number = rdr.GetInt16(2);
+                            batch.Number = rdr.GetInt16(1);
+                            batch.Year = rdr.GetString(2);
                         }
                     }
                 }
